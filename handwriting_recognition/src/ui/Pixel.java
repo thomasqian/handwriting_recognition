@@ -9,15 +9,25 @@ import javax.swing.JPanel;
 public class Pixel extends JPanel {
 	private boolean filled;
 	
-	public void Pixel() {
+	public Pixel(int RES) {
 		filled = false;
-		
-		setBackground(Color.WHITE);
-		setPreferredSize(new Dimension(1, 1));
+		setPreferredSize(new Dimension(RES, RES));
 	}
 	
 	public void paintComponent(Graphics g) {
-		if(filled) setBackground(Color.BLACK);
-		else setBackground(Color.WHITE);
+		if(filled) g.setColor(Color.BLACK);
+		else g.setColor(Color.WHITE);
+		g.fillRect(0, 0, getWidth(), getHeight());
+	}
+	
+	public void fill() {
+		if(!filled) {
+			filled = true;
+			repaint();
+		}
+	}
+	
+	public void clear() {
+		filled = false;
 	}
 }
