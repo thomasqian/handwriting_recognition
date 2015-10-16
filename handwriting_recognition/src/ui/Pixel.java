@@ -27,6 +27,8 @@ public class Pixel extends JPanel {
 		}
 	}
 	
+	public boolean isFilled() {return filled;}
+	
 	public void clear() {
 		filled = false;
 	}
