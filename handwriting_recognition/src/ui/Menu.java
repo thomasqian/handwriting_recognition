@@ -30,6 +30,9 @@ public class Menu extends JPanel implements ActionListener {
 		
 		this.ui = ui;
 		
+		//spacing between buttons
+		add(Box.createRigidArea(new Dimension (50, 50)));
+		
 		clearButton = new JButton("Clear");
 		add(clearButton);
 		clearButton.addActionListener(this);
